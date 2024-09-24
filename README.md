@@ -112,14 +112,111 @@ Access the API at `http://127.0.0.1:8000/api/`
 
 ## API Documentation
 
+### Using Postman
 
+ 1. **Register a New User**
 
+    - Set the request type to POST and the URL to `http://127.0.0.1:8000/api/register/`.
+    - In the Body tab, select raw and JSON format.
+    - Enter the JSON data:
+    ```json
+    {
+      "username": "your_username",
+      "password": "your_password"
+    }
+    ```
+    - Click Send.
 
+  Authenticate with the API to receive a JWT access token, which is required for subsequent authenticated requests.
 
+2. **Login to Obtain JWT Tokens:**
+   - Set the request type to `POST` and the URL to `http://127.0.0.1:8000/api/login/`.
+   - In the Body tab, select `raw` and `JSON` format.
+   - Enter the JSON data:
+    ```json
+     {
+       "username": "your_username",
+       "password": "your_password"
+     }
+     ```
+    - Click Send.
+    - Copy the `access` token from the response for authenticated requests.
 
+    
+3. **Create a New Item:**
+   - Set the request type to `POST` and the URL to `http://127.0.0.1:8000/api/items/`.
+   - In the Headers tab, add:
+     - `Content-Type: application/json`
+     - `Authorization: Bearer <your_access_token>`
+   - In the Body tab, select raw and `JSON` format.
+   - Enter the JSON data:
+    ```json
+     {
+    "name": "Item Name",
+    "description": "Item Description",
+    "quantity": 100,
+    "price": 29.99,
+    "category": "electronics"
+    }
+     ```
+   - Click Send.
+     
+4. **Read an Item:**
+   - Set the request type to `GET` and the URL to `http://127.0.0.1:8000/api/items/1/`.
+   - In the Headers tab, add:
+      - `Authorization: Bearer <your_access_token>`
+   - Click Send.
 
+5. **Update an Item:**
 
+   - Set the request type to `PUT` and the URL to `http://127.0.0.1:8000/api/items/1/update/`.
+   - In the Headers tab, add:
+      - `Content-Type: application/json`
+      - `Authorization: Bearer <your_access_token>`
+   - In the Body tab, select raw and JSON format.
+   - Enter the JSON data:
+    ```json
+     {
+    "name": "Updated Name",
+    "description": "Updated Description",
+    "quantity": 150,
+    "price": 39.99,
+    "category": "furniture"
+      }
+     ```
+   - Click Send.
+      
+6. **Delete an Item:**
 
+   - Set the request type to `DELETE` and the URL to `http://127.0.0.1:8000/api/items/1/delete/`.
+   - In the Headers tab, add:
+      - `Authorization: Bearer <your_access_token>`
+   - Click Send.
+
+---
+
+## Notes
+
+- Replace `<your_access_token>` with the actual JWT access token obtained from the login response.
+- Ensure that the API server is running at `http://127.0.0.1:8000/`.
+- Replace item IDs in the URLs with the actual IDs of the items you wish to interact with.
+- Use tools like [Postman](https://www.postman.com/) or [cURL](https://curl.se/) to send HTTP requests.
+
+---
+
+## Troubleshooting
+
+- **Invalid Credentials:** Ensure that the username and password provided during login are correct.
+- **Expired Token:** If the access token has expired, perform the login process again to obtain a new token.
+- **Permission Denied:** Verify that the authenticated user has the necessary permissions to perform the requested operation.
+- **Server Errors:** Check the server logs for detailed error messages and ensure that the API server is running without issues.
+
+---
+
+## License
+
+This is an assignment demo project. Please do not misuse or distribute this repository. It is intended solely for educational and demonstration purposes. Unauthorized use is prohibited.
+---
 
 
 
