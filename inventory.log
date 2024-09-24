@@ -1,0 +1,24 @@
+[2024-09-24 18:17:17,135] INFO inventory User testuser registered successfully.
+[2024-09-24 18:17:24,628] INFO inventory User testuser logged in successfully.
+[2024-09-24 18:17:58,930] INFO inventory Item 'Item Name' created successfully.
+[2024-09-24 18:18:12,585] ERROR inventory Item creation failed: Item 'Item Name' already exists.
+[2024-09-24 18:19:03,761] INFO inventory Cache miss for item ID 1. Fetching from DB.
+[2024-09-24 18:19:41,023] ERROR inventory Item creation failed: Item 'Test Item' already exists.
+[2024-09-24 18:19:41,408] INFO inventory Item 'New Item' created successfully.
+[2024-09-24 18:19:41,787] INFO inventory Item ID 4 deleted successfully.
+[2024-09-24 18:19:42,492] INFO inventory User testuser logged in successfully.
+[2024-09-24 18:19:42,856] INFO inventory Cache miss for item ID 6. Fetching from DB.
+[2024-09-24 18:19:43,556] INFO inventory User newuser registered successfully.
+[2024-09-24 18:19:43,926] INFO inventory Item ID 8 updated successfully.
+[2024-09-24 18:27:32,894] INFO inventory User prasanth logged in successfully.
+[2024-09-24 18:27:50,998] ERROR inventory Item creation failed: Item 'Item Name' already exists.
+[2024-09-24 18:28:03,334] ERROR inventory Item creation failed: Item 'Item Name' already exists.
+[2024-09-24 18:28:23,873] INFO inventory Cache miss for item ID 1. Fetching from DB.
+[2024-09-24 18:30:41,563] INFO inventory Item ID 1 deleted successfully.
+[2024-09-24 18:30:50,884] INFO inventory Item 'Wireless Mouse' created successfully.
+[2024-09-24 18:30:56,278] INFO inventory Item 'Office Chair' created successfully.
+[2024-09-24 18:31:03,405] INFO inventory Item 'Cotton T-Shirt' created successfully.
+[2024-09-24 18:31:09,958] ERROR inventory Item creation failed: {'category': [ErrorDetail(string='"accessories" is not a valid choice.', code='invalid_choice')]}
+[2024-09-24 18:31:28,227] ERROR inventory Item creation failed: {'category': [ErrorDetail(string='"accessories" is not a valid choice.', code='invalid_choice')]}
+[2024-09-24 18:31:52,168] INFO inventory Item 'Stainless Steel Water Bottle' created successfully.
+[2024-09-24 18:32:01,256] INFO inventory Item 'Bluetooth Speaker' created successfully.
