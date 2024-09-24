@@ -119,6 +119,7 @@ Access the API at `http://127.0.0.1:8000/api/`
     - Set the request type to POST and the URL to `http://127.0.0.1:8000/api/register/`.
     - In the Body tab, select raw and JSON format.
     - Enter the JSON data:
+      
     ```json
     {
       "username": "your_username",
@@ -133,6 +134,7 @@ Access the API at `http://127.0.0.1:8000/api/`
    - Set the request type to `POST` and the URL to `http://127.0.0.1:8000/api/login/`.
    - In the Body tab, select `raw` and `JSON` format.
    - Enter the JSON data:
+     
     ```json
      {
        "username": "your_username",
@@ -150,6 +152,7 @@ Access the API at `http://127.0.0.1:8000/api/`
      - `Authorization: Bearer <your_access_token>`
    - In the Body tab, select raw and `JSON` format.
    - Enter the JSON data:
+     
     ```json
      {
     "name": "Item Name",
@@ -175,6 +178,7 @@ Access the API at `http://127.0.0.1:8000/api/`
       - `Authorization: Bearer <your_access_token>`
    - In the Body tab, select raw and JSON format.
    - Enter the JSON data:
+     
     ```json
      {
     "name": "Updated Name",
@@ -215,7 +219,7 @@ Access the API at `http://127.0.0.1:8000/api/`
 
 ## License
 
-This is an assignment demo project. Please do not misuse or distribute this repository. It is intended solely for educational and demonstration purposes. Unauthorized use is prohibited.
+**This is an assignment demo project. Please do not misuse or distribute this repository. It is intended solely for educational and demonstration purposes. Unauthorized use is prohibited.**
 ---
 
 
