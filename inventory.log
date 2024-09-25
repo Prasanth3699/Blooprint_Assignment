@@ -22,3 +22,41 @@
 [2024-09-24 18:31:28,227] ERROR inventory Item creation failed: {'category': [ErrorDetail(string='"accessories" is not a valid choice.', code='invalid_choice')]}
 [2024-09-24 18:31:52,168] INFO inventory Item 'Stainless Steel Water Bottle' created successfully.
 [2024-09-24 18:32:01,256] INFO inventory Item 'Bluetooth Speaker' created successfully.
+[2024-09-25 09:11:03,349] ERROR inventory Item creation failed: Item 'Test Item' already exists.
+[2024-09-25 09:11:03,819] INFO inventory Item 'New Item' created successfully.
+[2024-09-25 09:11:04,368] INFO inventory Item ID 4 deleted successfully.
+[2024-09-25 09:11:05,231] INFO inventory User testuser logged in successfully.
+[2024-09-25 09:11:05,771] INFO inventory Cache miss for item ID 6. Fetching from DB.
+[2024-09-25 09:11:06,659] INFO inventory User newuser registered successfully.
+[2024-09-25 09:11:07,117] INFO inventory Item ID 8 updated successfully.
+[2024-09-25 09:11:24,493] ERROR inventory Item creation failed: Item 'Test Item' already exists.
+[2024-09-25 09:11:24,939] INFO inventory Item 'New Item' created successfully.
+[2024-09-25 09:11:25,399] INFO inventory Item ID 4 deleted successfully.
+[2024-09-25 09:11:26,238] INFO inventory User testuser logged in successfully.
+[2024-09-25 09:11:26,663] INFO inventory Cache hit for item ID 6.
+[2024-09-25 09:11:27,506] INFO inventory User newuser registered successfully.
+[2024-09-25 09:11:27,982] INFO inventory Item ID 8 updated successfully.
+[25/Sep/2024 09:54:58] INFO [inventory:46] User prasanth logged in successfully.
+[25/Sep/2024 09:54:58] INFO [inventory:35] User: Anonymous | Method: POST | Path: /api/login/ | Status: 200 | Duration: 520.35ms
+[25/Sep/2024 09:55:22] INFO [inventory:84] Cache miss for item ID 1. Fetching from DB.
+[25/Sep/2024 09:55:22] INFO [inventory:35] User: prasanth | Method: GET | Path: /api/items/1/ | Status: 404 | Duration: 173.69ms
+[25/Sep/2024 09:55:35] INFO [inventory:84] Cache miss for item ID 2. Fetching from DB.
+[25/Sep/2024 09:55:35] INFO [inventory:35] User: prasanth | Method: GET | Path: /api/items/2/ | Status: 200 | Duration: 135.42ms
+[25/Sep/2024 09:56:32] INFO [inventory:81] Cache hit for item ID 2.
+[25/Sep/2024 09:56:32] INFO [inventory:35] User: prasanth | Method: GET | Path: /api/items/2/ | Status: 200 | Duration: 151.51ms
+[25/Sep/2024 09:57:01] INFO [inventory:84] Cache miss for item ID 1. Fetching from DB.
+[25/Sep/2024 09:57:01] INFO [inventory:35] User: prasanth | Method: GET | Path: /api/items/1/ | Status: 404 | Duration: 54.55ms
+[25/Sep/2024 09:59:45] INFO [inventory:84] Cache miss for item ID 1. Fetching from DB.
+[25/Sep/2024 09:59:45] INFO [inventory:35] User: prasanth | Method: GET | Path: /api/items/1/ | Status: 404 | Duration: 119.66ms
+[25/Sep/2024 10:00:58] ERROR [inventory:62] Item creation failed: Item 'Bluetooth Speaker' already exists.
+[25/Sep/2024 10:00:58] INFO [inventory:35] User: prasanth | Method: POST | Path: /api/items/ | Status: 400 | Duration: 72.4ms
+[25/Sep/2024 10:06:20] INFO [inventory:89] Cache miss for item ID 4. Fetching from DB.
+[25/Sep/2024 10:06:20] INFO [inventory:35] User: prasanth | Method: GET | Path: /api/items/4/ | Status: 200 | Duration: 142.14ms
+[25/Sep/2024 10:06:31] INFO [inventory:89] Cache miss for item ID 1. Fetching from DB.
+[25/Sep/2024 10:06:31] INFO [inventory:35] User: prasanth | Method: GET | Path: /api/items/1/ | Status: 404 | Duration: 78.45ms
+[25/Sep/2024 10:06:38] INFO [inventory:89] Cache miss for item ID 2. Fetching from DB.
+[25/Sep/2024 10:06:38] INFO [inventory:35] User: prasanth | Method: GET | Path: /api/items/2/ | Status: 200 | Duration: 124.34ms
+[25/Sep/2024 10:06:46] INFO [inventory:86] Cache hit for item ID 4.
+[25/Sep/2024 10:06:46] INFO [inventory:35] User: prasanth | Method: GET | Path: /api/items/4/ | Status: 200 | Duration: 58.52ms
+[25/Sep/2024 10:07:11] INFO [inventory:86] Cache hit for item ID 2.
+[25/Sep/2024 10:07:11] INFO [inventory:35] User: prasanth | Method: GET | Path: /api/items/2/ | Status: 200 | Duration: 42.37ms

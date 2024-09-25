@@ -65,6 +65,7 @@ MIDDLEWARE = [
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
+    'inventory.middleware.APILoggingMiddleware',
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
@@ -149,31 +150,41 @@ LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
     'formatters': {
-        'verbose': {
-            'format': '[{asctime}] {levelname} {name} {message}',
-            'style': '{',
+        'standard': {
+            'format': '[%(asctime)s] %(levelname)s [%(name)s:%(lineno)s] %(message)s',
+            'datefmt': '%d/%b/%Y %H:%M:%S'
         },
-        'simple': {
-            'format': '{levelname} {message}',
-            'style': '{',
+        'api_formatter': {  # Custom formatter for API logs
+            'format': '[%(asctime)s] %(levelname)s [%(name)s] %(message)s',
+            'datefmt': '%d/%b/%Y %H:%M:%S'
         },
     },
     'handlers': {
         'file': {
-            'level': 'INFO',
+            'level': 'DEBUG',
             'class': 'logging.FileHandler',
             'filename': os.path.join(BASE_DIR, 'inventory.log'),
-            'formatter': 'verbose',
+            'formatter': 'standard',
         },
         'console': {
             'class': 'logging.StreamHandler',
-            'formatter': 'simple',
+            'formatter': 'standard',
         },
     },
     'loggers': {
         'inventory': {
             'handlers': ['file', 'console'],
-            'level': 'INFO',
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+        'django': {  # Django's default logger
+            'handlers': ['file', 'console'],
+            'level': 'ERROR',
+            'propagate': True,
+        },
+        'django.request': {  # Captures 500 errors
+            'handlers': ['file', 'console'],
+            'level': 'ERROR',
             'propagate': False,
         },
     },

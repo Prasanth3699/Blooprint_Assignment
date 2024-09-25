@@ -23,6 +23,7 @@ def register(request):
     User registration endpoint.
     """
     serializer = UserSerializer(data=request.data)
+    
     if serializer.is_valid():
         serializer.save()
         logger.info(f"User {serializer.data['username']} registered successfully.")
@@ -41,6 +42,7 @@ def login(request):
     password = request.data.get('password')
 
     user = authenticate(username=username, password=password)
+    
     if user is not None:
         refresh = RefreshToken.for_user(user)
         logger.info(f"User {username} logged in successfully.")
@@ -48,6 +50,7 @@ def login(request):
             'refresh': str(refresh),
             'access': str(refresh.access_token),
         }, status=status.HTTP_200_OK)
+    
     logger.warning(f"Authentication failed for user {username}.")
     return Response({'detail': 'Invalid credentials'}, status=status.HTTP_401_UNAUTHORIZED)
 
@@ -61,10 +64,12 @@ def create_item(request):
     if Item.objects.filter(name=request.data.get('name')).exists():
         logger.error(f"Item creation failed: Item '{request.data.get('name')}' already exists.")
         return Response({'error': 'Item already exists.'}, status=status.HTTP_400_BAD_REQUEST)
+    
     if serializer.is_valid():
         serializer.save()
         logger.info(f"Item '{serializer.data['name']}' created successfully.")
         return Response(serializer.data, status=status.HTTP_201_CREATED)
+    
     logger.error(f"Item creation failed: {serializer.errors}")
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
@@ -95,13 +100,16 @@ def update_item(request, item_id):
     """
     item = get_object_or_404(Item, id=item_id)
     serializer = ItemSerializer(item, data=request.data)
+    
     if serializer.is_valid():
         serializer.save()
+        
         # Update cache
         cache_key = f'item_{item_id}'
         cache.set(cache_key, serializer.data, timeout=CACHE_TTL)
         logger.info(f"Item ID {item_id} updated successfully.")
         return Response(serializer.data, status=status.HTTP_200_OK)
+    
     logger.error(f"Item update failed for ID {item_id}: {serializer.errors}")
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
@@ -113,6 +121,7 @@ def delete_item(request, item_id):
     """
     item = get_object_or_404(Item, id=item_id)
     item.delete()
+    
     # Remove from cache
     cache_key = f'item_{item_id}'
     cache.delete(cache_key)
