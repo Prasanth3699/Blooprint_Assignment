@@ -50,7 +50,7 @@ Follow these instructions to set up and run the Inventory Management System API 
 #### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/inventory_management.git
+git clone https://github.com/Prasanth3699/Blooprint_Assignment.git
 cd inventory_management
 ```
 
@@ -58,8 +58,8 @@ cd inventory_management
   It's recommended to use a virtual environment to manage project dependencies.
 
 ```bash
-git clone https://github.com/yourusername/inventory_management.git
-cd inventory_management
+python3 -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
 
 
